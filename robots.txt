@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://rohtakcabservice.com/sitemap.xml
+
+# Disallow admin or private directories (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all images
+Allow: /images/
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Rohtak Cab Service - Top Rated & Trusted Taxi Provider</title>
+    <meta name="description"
+        content="Rohtak Cab Service is the most trusted 24x7 taxi provider in Rohtak. Serving NCR, Punjab, HP since 10+ years. Safe drivers, clean cars & affordable rates.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Unique Styles for About Us Page */
+        .hero-about {
+            height: 60vh;
+            background-image: linear-gradient(rgba(13, 27, 42, 0.8), rgba(13, 27, 42, 0.9)), url('images/hero_bg.png');
+            background-attachment: fixed;
+            /* Parallax */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .about-story {
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .story-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .story-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .story-content {
+            flex: 1;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .story-content h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .story-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+        }
+
+        .story-image:hover img {
+            transform: scale(1.02) rotate(1deg);
+        }
+
+        /* Stats Strip */
+        .stats-strip {
+            background: var(--primary-color);
+            padding: 60px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .stats-strip .stat-item h3 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid transparent;
+            transition: 0.4s;
+        }
+
+        .value-card:hover {
+            border-top-color: var(--accent-color);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-card .icon {
+            font-size: 3rem;
+            color: #ddd;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            opacity: 0.5;
+            transition: 0.4s;
+        }
+
+        .value-card:hover .icon {
+            color: var(--accent-color);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Service Area Map Styling */
+        .map-section {
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .service-pill {
+            background: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            font-weight: 500;
+            color: var(--primary-color);
+            transition: 0.3s;
+        }
+
+        .service-pill:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .story-row {
+                flex-direction: column !important;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body class="page-about">
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Rohtak Cab Service Logo"></a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html" class="highlight">About Us</a></li>
+
+                    <!-- Services Dropdown -->
+                    <li class="dropdown">
+                        <a href="all-services.html" class="dropbtn">Services <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="taxi-service-in-rohtak.html">Taxi Service in Rohtak</a></li>
+                            <li><a href="local-taxi-service.html">Local Taxi</a></li>
+                            <li><a href="outstation-taxi-service.html">Outstation Taxi</a></li>
+                            <li><a href="airport-taxi.html">Airport Taxi</a></li>
+                            <li><a href="one-way-taxi-service.html">One-Way Taxi</a></li>
+                            <li><a href="all-services.html">View All Services</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Routes Dropdown -->
+                    <li class="dropdown">
+                        <a href="all-routes.html" class="dropbtn">Routes <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="rohtak-to-delhi.html">Rohtak → Delhi</a></li>
+                            <li><a href="rohtak-to-gurgaon.html">Rohtak → Gurgaon</a></li>
+                            <li><a href="rohtak-to-chandigarh.html">Rohtak → Chandigarh</a></li>
+                            <li><a href="rohtak-to-noida.html">Rohtak → Noida</a></li>
+                            <li><a href="rohtak-to-jaipur.html">Rohtak → Jaipur</a></li>
+                            <li><a href="all-routes.html">View All Routes</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Fleet Dropdown -->
+                    <li class="dropdown">
+                        <a href="index.html#fleet" class="dropbtn">Fleet <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="sedan-taxi.html">Sedan</a></li>
+                            <li><a href="suv-taxi.html">SUV</a></li>
+                            <li><a href="innova-crysta-taxi.html">Innova Crysta</a></li>
+                            <li><a href="tempo-traveller.html">Tempo Traveller</a></li>
+                            <li><a href="minibus-taxi.html">Minibus</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="online-cab-booking.html">Booking</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:08307930740" class="btn btn-outline"><i class="fa-solid fa-phone"></i> 083079 30740</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="close-menu">&times;</div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="all-services.html">Services</a></li>
+            <li><a href="all-routes.html">Routes</a></li>
+            <li><a href="sedan-taxi.html">Fleet</a></li>
+            <li><a href="online-cab-booking.html">Booking</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- H1 Hero Section -->
+    <section class="hero-about">
+        <div class="container animate-on-scroll animate-zoom">
+            <h1>Your Trusted 24×7 Taxi Service in Rohtak</h1>
+            <p style="font-size: 1.2rem; margin-top: 15px; opacity: 0.9;">Rohtak's Most Reliable, Affordable &
+                Customer-Friendly Taxi Company.</p>
+            <div style="margin-top: 30px;">
+                <a href="#mission" class="btn btn-primary pulse"><i class="fa-solid fa-arrow-down"></i> Read Our
+                    Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- H2: Journey & Mission (Zig Zag Layout) -->
+    <section id="mission" class="about-story">
+        <div class="container">
+            <!-- Row 1: Text Left, Image Right -->
+            <div class="story-row">
+                <div class="story-content animate-on-scroll animate-fade-right">
+                    <h2>Our Journey & Mission</h2>
+                    <p><strong>Rohtak Cab Service</strong> Rohtak ki sabse reliable, affordable aur customer-friendly
+                        taxi company hai. Hum last 10+ years se Rohtak, Haryana aur Delhi NCR me clean cars, trained
+                        drivers aur safe transportation provide kar rahe hain.</p>
+                    <p>Hamari journey ek simple mission se shuru hui: <em>"Rohtak ke logon ko premium taxi service,
+                            affordable rate par provide karna."</em></p>
+                    <p>Humara focus hamesha ek hi raha hai: <strong>“Safe, Comfortable & On-Time Travel Every
+                            Time.”</strong></p>
+                    <p>Aaj hum Rohtak ke sabse trusted taxi brand me se ek ban chuke hain, with thousands of satisfied
+                        customers & 24×7 availability.</p>
+
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li><i class="fa-solid fa-check-circle highlight"></i> Vehicles improve kiye</li>
+                        <li><i class="fa-solid fa-check-circle highlight"></i> Drivers ko train kiya</li>
+                        <li><i class="fa-solid fa-check-circle highlight"></i> Transparent pricing rakha</li>
+                    </ul>
+                </div>
+                <div class="story-image animate-on-scroll animate-fade-left">
+                    <img src="images/family_travel.png" alt="Family traveling in Rohtak Cab">
+                </div>
+            </div>
+
+            <!-- Row 2: Image Left, Text Right -->
+            <div class="story-row reverse">
+                <div class="story-content animate-on-scroll animate-fade-left">
+                    <h2>Why Choose Rohtak Cab Service?</h2>
+                    <p>Simply because we care about your journey. Unlike others, we don't just clear trips, we build
+                        relationships.</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                        <div>
+                            <h4 class="highlight"><i class="fa-solid fa-car-side"></i> Clean Cars</h4>
+                            <p style="font-size: 0.9rem;">Hamare fleet me premium sedans, SUVs, Crysta & minibus
+                                included hain.</p>
+                        </div>
+                        <div>
+                            <h4 class="highlight"><i class="fa-solid fa-user-shield"></i> Verified Drivers</h4>
+                            <p style="font-size: 0.9rem;">Background verified, City & Highway trained professional
+                                drivers.</p>
+                        </div>
+                        <div>
+                            <h4 class="highlight"><i class="fa-solid fa-clock"></i> 24×7 Availability</h4>
+                            <p style="font-size: 0.9rem;">Chahe raat ho ya subah, humesha taxi ready milti hai.</p>
+                        </div>
+                        <div>
+                            <h4 class="highlight"><i class="fa-solid fa-wallet"></i> Honest Pricing</h4>
+                            <p style="font-size: 0.9rem;">No hidden charges. No surge pricing. Clear rate list.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image animate-on-scroll animate-fade-right">
+                    <img src="images/driver_safety.png" alt="Safe Driver in Rohtak">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section class="stats-strip animate-on-scroll">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>5000+</h3>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Fleet Vehicles</p>
+            </div>
+            <div class="stat-item">
+                <h3>10+</h3>
+                <p>Years of Trust</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Safety Record</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- H2: Our Services (Grid) -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our <span class="highlight">Services</span></h2>
+                <div class="line"></div>
+                <p>Rohtak Cab Service aapko wide range of premium services deta hai.</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card animate-on-scroll animate-zoom delay-100">
+                    <i class="fa-solid fa-city icon"></i>
+                    <h3>Local Taxi</h3>
+                    <p>City rides, market visits, office travel, hospital trips. 10-15 min fast pickup anywhere in
+                        Rohtak.</p>
+                </div>
+                <div class="value-card animate-on-scroll animate-zoom delay-200">
+                    <i class="fa-solid fa-route icon"></i>
+                    <h3>Outstation Taxi</h3>
+                    <p>Rohtak se Delhi, Gurgaon, Chandigarh, Jaipur, Hisar, Agra, Shimla, Manali aur poora North India.
+                    </p>
+                </div>
+                <div class="value-card animate-on-scroll animate-zoom delay-300">
+                    <i class="fa-solid fa-plane-departure icon"></i>
+                    <h3>Airport Taxi</h3>
+                    <p>Reliable drops to Delhi IGI Airport & Chandigarh Airport. We act as your private airport shuttle.
+                    </p>
+                </div>
+                <div class="value-card animate-on-scroll animate-zoom delay-100">
+                    <i class="fa-solid fa-arrow-right-arrow-left icon"></i>
+                    <h3>One-Way Taxi</h3>
+                    <p>Pay only for one side — best value for money. Available for Delhi, Gurgaon, Noida, etc.</p>
+                </div>
+                <div class="value-card animate-on-scroll animate-zoom delay-200">
+                    <i class="fa-solid fa-briefcase icon"></i>
+                    <h3>Corporate Taxi</h3>
+                    <p>Daily office commute, corporate meetings, staff travel with GST billing options.</p>
+                </div>
+                <div class="value-card animate-on-scroll animate-zoom delay-300">
+                    <i class="fa-solid fa-users icon"></i>
+                    <h3>Group Travel</h3>
+                    <p>Tempo Traveller (12/17 seater) & Minibus for weddings, events, and family tours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- H2: Our Fleet (Horizontal) -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our <span class="highlight">Fleet</span></h2>
+                <div class="line"></div>
+                <p>Humare paas har type ki travel need ke liye car available hai.</p>
+            </div>
+
+            <div class="fleet-showcase animate-on-scroll animate-fade-right">
+                <div class="fleet-image-large">
+                    <img src="images/fleet_collage.png" alt="Our Entire Fleet">
+                </div>
+                <div class="fleet-list">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 10px;">
+                        <h4><i class="fa-solid fa-car"></i> Sedan (Dzire / Etios)</h4>
+                        <p>Affordable & comfortable. Best for local & small family trips.</p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 10px;">
+                        <h4><i class="fa-solid fa-van-shuttle"></i> SUV (Ertiga / Innova)</h4>
+                        <p>Extra space & smooth ride. Best for long travel & family tours.</p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 10px;">
+                        <h4><i class="fa-solid fa-crown"></i> Innova Crysta</h4>
+                        <p>Premium comfort. Best for VIP travel & corporate meetings.</p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                        <h4><i class="fa-solid fa-bus"></i> Tempo Traveller</h4>
+                        <p>12/17/26 Seater. Best for group travel, tours & weddings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- H2: Service Areas (Map) -->
+    <section class="section map-section animate-on-scroll">
+        <div class="container">
+            <div class="service-area-layout" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+
+                <!-- Left: Map Image -->
+                <div class="map-image-col animate-on-scroll animate-fade-right" style="flex: 1; min-width: 300px;">
+                    <img src="images/route_map.png" alt="Service Area Map"
+                        style="width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); transition: transform 0.5s ease;">
+                </div>
+
+                <!-- Right: Content -->
+                <div class="map-content-col animate-on-scroll animate-fade-left"
+                    style="flex: 1; min-width: 300px; text-align: left;">
+                    <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                        <h2>Our <span class="highlight">Service Areas</span></h2>
+                        <div class="line" style="margin-left: 0;"></div>
+                        <p>Hum Rohtak ke saath-saath poore North India me taxi provide karte hain.</p>
+                    </div>
+
+                    <div class="service-list" style="justify-content: flex-start;">
+                        <span class="service-pill">Rohtak</span>
+                        <span class="service-pill">Delhi NCR</span>
+                        <span class="service-pill">Gurgaon</span>
+                        <span class="service-pill">Noida</span>
+                        <span class="service-pill">Chandigarh</span>
+                        <span class="service-pill">Jaipur</span>
+                        <span class="service-pill">Hisar</span>
+                        <span class="service-pill">Manali</span>
+                        <span class="service-pill">Shimla</span>
+                        <span class="service-pill">Haridwar</span>
+                        <span class="service-pill">Agra</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- H2: Final Word & CTA -->
+    <section class="section bg-dark text-white text-center">
+        <div class="container animate-on-scroll animate-zoom">
+            <h2 style="color: white; margin-bottom: 20px;">Safety, Trust & Comfort - That's Our Promise</h2>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; color: rgba(255,255,255,0.8);">
+                Hum aapko safe, fast, high-quality & affordable taxi service dene ke liye committed hain.
+                Rohtak Cab Service ka aim Rohtak ko ek premium travel experience dena hai.
+            </p>
+            <div class="hero-btns" style="justify-content: center;">
+                <a href="tel:08307930740" class="btn btn-primary pulse"
+                    style="font-size: 1.2rem; padding: 15px 40px;"><i class="fa-solid fa-phone"></i> Call 083079
+                    30740</a>
+                <a href="https://wa.me/918307930740" class="btn btn-whatsapp"
+                    style="font-size: 1.2rem; padding: 15px 40px;"><i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    Booking</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <!-- SECTION 1: COMPANY INTRO -->
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <div style="margin-bottom: 20px;">
+                    <img src="images/logo.png" alt="Rohtak Cab Service Logo" style="height: 60px; margin-bottom: 15px;">
+                </div>
+                <p>Your trusted 24×7 taxi service in Rohtak for local rides, airport transfers, one-way cabs, outstation
+                    trips and group travel. Clean cars, trained drivers and affordable fares.</p>
+                <p style="margin-top: 10px; font-size: 0.9rem;">Serving Rohtak, Delhi NCR, Haryana, Punjab, Rajasthan &
+                    Himachal.</p>
+            </div>
+
+            <!-- SECTION 2: IMPORTANT LINKS -->
+            <div class="footer-col">
+                <h3>Important Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                    <li><a href="about-us.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+                    <li><a href="online-cab-booking.html"><i class="fa-solid fa-angle-right"></i> Booking</a></li>
+                    <li><a href="all-services.html"><i class="fa-solid fa-angle-right"></i> All Services</a></li>
+                    <li><a href="sedan-taxi.html"><i class="fa-solid fa-angle-right"></i> Fleet</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 3: OUR SERVICES -->
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="taxi-service-in-rohtak.html"><i class="fa-solid fa-taxi"></i> Taxi Service in
+                            Rohtak</a></li>
+                    <li><a href="local-taxi-service.html"><i class="fa-solid fa-taxi"></i> Local Taxi Service</a></li>
+                    <li><a href="outstation-taxi-service.html"><i class="fa-solid fa-taxi"></i> Outstation Taxi</a></li>
+                    <li><a href="one-way-taxi-service.html"><i class="fa-solid fa-taxi"></i> One-Way Taxi</a></li>
+                    <li><a href="airport-taxi.html"><i class="fa-solid fa-plane"></i> Airport Taxi</a></li>
+                    <li><a href="sedan-taxi.html"><i class="fa-solid fa-car"></i> Sedan / SUV Taxi</a></li>
+                    <li><a href="innova-crysta-taxi.html"><i class="fa-solid fa-crown"></i> Innova Crysta Taxi</a></li>
+                    <li><a href="tempo-traveller.html"><i class="fa-solid fa-bus"></i> Tempo Traveller / Minibus</a>
+                    </li>
+                    <li><a href="all-services.html"><i class="fa-solid fa-list"></i> All Services</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 4: TOP ROUTES -->
+            <div class="footer-col">
+                <h3>Top Routes</h3>
+                <ul class="footer-links">
+                    <li><a href="rohtak-to-delhi.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Delhi</a>
+                    </li>
+                    <li><a href="rohtak-to-gurgaon.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Gurgaon</a>
+                    </li>
+                    <li><a href="rohtak-to-chandigarh.html"><i class="fa-solid fa-location-arrow"></i> Rohtak →
+                            Chandigarh</a></li>
+                    <li><a href="rohtak-to-jaipur.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Jaipur</a>
+                    </li>
+                    <li><a href="rohtak-to-noida.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Noida</a>
+                    </li>
+                    <li><a href="rohtak-to-faridabad.html"><i class="fa-solid fa-location-arrow"></i> Rohtak →
+                            Faridabad</a></li>
+                    <li><a href="rohtak-to-panipat.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Panipat</a>
+                    </li>
+                    <li><a href="rohtak-to-sonipat.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Sonipat</a>
+                    </li>
+                    <li><a href="rohtak-to-hisar.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Hisar</a>
+                    </li>
+                    <li><a href="rohtak-to-agra.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Agra</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5, 6: CONTACT & CTA -->
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong><br>Shop No. 1720, Housing Board,
+                    Sector-1, Rohtak, Haryana 124001</p>
+                <div style="margin: 15px 0;">
+                    <p><i class="fa-solid fa-phone"></i> 083079 30740</p>
+                    <p><i class="fa-brands fa-whatsapp"></i> 083079 30740</p>
+                    <p><i class="fa-solid fa-clock"></i> 24×7 Available</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@rohtakcabservice.com</p>
+                </div>
+
+                <!-- Calls to Action -->
+                <div class="footer-cta" style="margin-top: 20px;">
+                    <a href="tel:08307930740" class="footer-btn btn-blue"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+                    <a href="https://wa.me/918307930740" class="footer-btn btn-green"><i
+                            class="fa-brands fa-whatsapp"></i> WHATSAPP</a>
+                    <a href="online-cab-booking.html" class="footer-btn btn-yellow"><i class="fa-solid fa-car"></i> BOOK
+                        A
+                        RIDE</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rohtak Cab Service — All Rights Reserved. | Designed & Powered By <a
+                    href="https://ethicscomputer.in" target="_blank">EthicsComputer</a></p>
+        </div>
+    </footer>
+    <a href="https://wa.me/918307930740" class="floating-whatsapp" target="_blank"><i
+            class="fa-brands fa-whatsapp"></i></a>
+    <script src="script.js"></script>
+</body>
+
+</html>

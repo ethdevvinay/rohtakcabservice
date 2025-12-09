@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Online Taxi in Rohtak - Fast & Easy Cab Booking | Rohtak Cab Service</title>
+    <meta name="description"
+        content="Book taxi online in Rohtak in just 10 seconds. Local, Outstation, Airport & One-Way Cabs. Instant WhatsApp confirmation. Call 083079 30740.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Unique Page Styles --- */
+
+        /* Split Hero Section */
+        .booking-hero {
+            position: relative;
+            min-height: 100vh;
+            /* Full viewport height for immersion */
+            background-image: linear-gradient(135deg, rgba(13, 27, 42, 0.95), rgba(13, 27, 42, 0.8)), url('images/hero_bg_new.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            /* Offset for header */
+            padding-bottom: 50px;
+        }
+
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        /* Left Content */
+        .booking-content {
+            color: white;
+            padding-top: 20px;
+        }
+
+        .booking-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .booking-content .highlight {
+            color: var(--accent-color);
+        }
+
+        .booking-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            max-width: 90%;
+        }
+
+        .contact-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .contact-box i {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .contact-box div strong {
+            display: block;
+            font-size: 1.2rem;
+        }
+
+        /* Right Form with Glassmorphism */
+        .booking-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            /* Condensed padding */
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-top: 5px solid var(--accent-color);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .booking-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .booking-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            /* Tighter gap */
+        }
+
+        .form-group {
+            margin-bottom: 0;
+            /* Handled by grid gap */
+        }
+
+        .form-full {
+            grid-column: span 2;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: 0.3s;
+            background: #f9f9f9;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-color);
+            background: white;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(252, 163, 17, 0.2);
+        }
+
+        .btn-booking {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-booking:hover {
+            background-color: #e59400;
+            transform: translateY(-2px);
+        }
+
+        /* How It Works (Timeline) */
+        .timeline-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        /* Horizontal Line */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: #ddd;
+            z-index: 0;
+        }
+
+        .timeline-step {
+            position: relative;
+            width: 22%;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            box-shadow: 0 0 0 5px #f8f9fa;
+            /* Mask line */
+        }
+
+        .timeline-step:hover .step-icon {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .step-content h4 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .step-content p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Why Book Cards */
+        .why-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-box-adv {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: start;
+            gap: 20px;
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .feature-box-adv:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--accent-color);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-box-adv .icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        /* Popular Routes Pills */
+        .routes-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .route-pill-large {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .route-pill-large i {
+            color: var(--accent-color);
+        }
+
+        .route-pill-large:hover {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(252, 163, 17, 0.3);
+        }
+
+        .route-pill-large:hover i {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-hero {
+                padding-top: 120px;
+                height: auto;
+            }
+
+            .timeline-container {
+                flex-direction: column;
+                gap: 30px;
+                padding-left: 20px;
+            }
+
+            .timeline-container::before {
+                left: 20px;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                height: auto;
+            }
+
+            .timeline-step {
+                width: 100%;
+                text-align: left;
+                padding-left: 40px;
+            }
+
+            .step-icon {
+                position: absolute;
+                left: -25px;
+                top: 0;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="page-booking">
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Rohtak Cab Service Logo"></a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+
+                    <!-- Services Dropdown -->
+                    <li class="dropdown">
+                        <a href="all-services.html" class="dropbtn">Services <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="taxi-service-in-rohtak.html">Taxi Service in Rohtak</a></li>
+                            <li><a href="local-taxi-service.html">Local Taxi</a></li>
+                            <li><a href="outstation-taxi-service.html">Outstation Taxi</a></li>
+                            <li><a href="airport-taxi.html">Airport Taxi</a></li>
+                            <li><a href="one-way-taxi-service.html">One-Way Taxi</a></li>
+                            <li><a href="all-services.html">View All Services</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Routes Dropdown -->
+                    <li class="dropdown">
+                        <a href="all-routes.html" class="dropbtn">Routes <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="rohtak-to-delhi.html">Rohtak → Delhi</a></li>
+                            <li><a href="rohtak-to-gurgaon.html">Rohtak → Gurgaon</a></li>
+                            <li><a href="rohtak-to-chandigarh.html">Rohtak → Chandigarh</a></li>
+                            <li><a href="rohtak-to-noida.html">Rohtak → Noida</a></li>
+                            <li><a href="rohtak-to-jaipur.html">Rohtak → Jaipur</a></li>
+                            <li><a href="all-routes.html">View All Routes</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Fleet Dropdown -->
+                    <li class="dropdown">
+                        <a href="index.html#fleet" class="dropbtn">Fleet <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="sedan-taxi.html">Sedan</a></li>
+                            <li><a href="suv-taxi.html">SUV</a></li>
+                            <li><a href="innova-crysta-taxi.html">Innova Crysta</a></li>
+                            <li><a href="tempo-traveller.html">Tempo Traveller</a></li>
+                            <li><a href="minibus-taxi.html">Minibus</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="online-cab-booking.html" class="highlight">Booking</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:08307930740" class="btn btn-outline"><i class="fa-solid fa-phone"></i> 083079 30740</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="close-menu">&times;</div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="all-services.html">Services</a></li>
+            <li><a href="all-routes.html">Routes</a></li>
+            <li><a href="sedan-taxi.html">Fleet</a></li>
+            <li><a href="online-cab-booking.html">Booking</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- H1: Hero & Booking Section -->
+    <section class="booking-hero">
+        <div class="container booking-container">
+
+            <!-- Intro Text (Left) -->
+            <div class="booking-content animate-on-scroll animate-fade-right">
+                <h1>Online Taxi Booking in <span class="highlight">Rohtak</span> – Book Cab in 10 Seconds</h1>
+                <p>Welcome to the fast & easy online booking page of Rohtak Cab Service. Yahan se aap local, outstation,
+                    airport & one-way taxi turant book kar sakte ho — bas simple form fill karo aur confirmation
+                    instantly WhatsApp par mil jayega.</p>
+
+                <div class="contact-box pulse-gold">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <span>Need Help? Chat with us</span>
+                        <strong>083079 30740</strong>
+                    </div>
+                </div>
+
+                <div class="why-list" style="margin-top: 20px;">
+                    <p><i class="fa-solid fa-check-circle highlight"></i> Instant Confirmation</p>
+                    <p><i class="fa-solid fa-check-circle highlight"></i> No Hidden Charges</p>
+                    <p><i class="fa-solid fa-check-circle highlight"></i> 24x7 Support</p>
+                </div>
+            </div>
+
+            <!-- Booking Form (Right) -->
+            <div class="booking-card animate-on-scroll animate-fade-left">
+                <h2><i class="fa-solid fa-calendar-check"></i> Book Your Taxi Now</h2>
+                <form id="onlineBookingForm" onsubmit="sendToWhatsApp(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Mobile Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter Mobile" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Pickup Location</label>
+                            <input type="text" id="pickup" class="form-control" placeholder="City/Area" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Drop Location</label>
+                            <input type="text" id="drop" class="form-control" placeholder="City/Area" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Travel Date</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Travel Time</label>
+                            <input type="time" id="time" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Car Type</label>
+                            <select id="car" class="form-control">
+                                <option>Sedan (Dzire/Etios)</option>
+                                <option>SUV (Ertiga)</option>
+                                <option>Innova Crysta</option>
+                                <option>Tempo Traveller</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Passenger Count</label>
+                            <input type="number" id="passengers" class="form-control" placeholder="Ex: 4" required
+                                min="1">
+                        </div>
+
+                        <div class="form-group form-full">
+                            <label class="form-label">Trip Type</label>
+                            <select id="tripType" class="form-control">
+                                <option>Outstation (Round Trip)</option>
+                                <option>One-Way Drop</option>
+                                <option>Local Usage (8hr/80km)</option>
+                                <option>Airport Transfer</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-full">
+                            <label class="form-label">Additional Notes (Optional)</label>
+                            <input type="text" id="note" class="form-control" placeholder="Any specific requirement?">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-booking pulse">
+                        <i class="fa-brands fa-whatsapp"></i> Confirm Booking via WhatsApp
+                    </button>
+                    <p style="font-size: 0.8rem; text-align: center; margin-top: 10px; color: #777;"><i
+                            class="fa-solid fa-lock"></i> Your data is safe with us.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- H2: How It Works -->
+    <section class="timeline-section animate-on-scroll">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Online Booking <span class="highlight">Works?</span></h2>
+                <div class="line"></div>
+                <p>Booking a cab is easier than making a cup of tea!</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-step animate-on-scroll animate-zoom delay-100">
+                    <div class="step-icon">1</div>
+                    <div class="step-content">
+                        <h4>Fill Form</h4>
+                        <p>Fill your trip details in the booking form above.</p>
+                    </div>
+                </div>
+                <div class="timeline-step animate-on-scroll animate-zoom delay-200">
+                    <div class="step-icon">2</div>
+                    <div class="step-content">
+                        <h4>Get Confirmation</h4>
+                        <p>You will get an instant confirmation on WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="timeline-step animate-on-scroll animate-zoom delay-300">
+                    <div class="step-icon">3</div>
+                    <div class="step-content">
+                        <h4>Driver Details</h4>
+                        <p>We share driver & car details 30 mins before trip.</p>
+                    </div>
+                </div>
+                <div class="timeline-step animate-on-scroll animate-zoom delay-400">
+                    <div class="step-icon">4</div>
+                    <div class="step-content">
+                        <h4>Enjoy Ride</h4>
+                        <p>Driver pick you up on time. Happy Journey!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- H2: Why Book Online -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Why Book Taxi <span class="highlight">Online?</span></h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="why-cards">
+                <div class="feature-box-adv animate-on-scroll animate-fade-right delay-100">
+                    <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div>
+                        <h4>Instant Confirmation</h4>
+                        <p>No waiting. Get immediate response on your booking query.</p>
+                    </div>
+                </div>
+                <div class="feature-box-adv animate-on-scroll animate-fade-right delay-200">
+                    <div class="icon"><i class="fa-solid fa-ban"></i></div>
+                    <div>
+                        <h4>No Hidden Charges</h4>
+                        <p>Transparent pricing. What you see is what you pay.</p>
+                    </div>
+                </div>
+                <div class="feature-box-adv animate-on-scroll animate-fade-right delay-300">
+                    <div class="icon"><i class="fa-solid fa-headset"></i></div>
+                    <div>
+                        <h4>24×7 Support</h4>
+                        <p>Our team is always awake to help you, day or night.</p>
+                    </div>
+                </div>
+                <div class="feature-box-adv animate-on-scroll animate-fade-left delay-100">
+                    <div class="icon"><i class="fa-solid fa-id-card"></i></div>
+                    <div>
+                        <h4>Verified Drivers</h4>
+                        <p>Police verified, polite, and professional drivers.</p>
+                    </div>
+                </div>
+                <div class="feature-box-adv animate-on-scroll animate-fade-left delay-200">
+                    <div class="icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+                    <div>
+                        <h4>Clean Cars</h4>
+                        <p>Hygienic, washed, and sanitized cars for every trip.</p>
+                    </div>
+                </div>
+                <div class="feature-box-adv animate-on-scroll animate-fade-left delay-300">
+                    <div class="icon"><i class="fa-solid fa-person-seat-reclined"></i></div>
+                    <div>
+                        <h4>Comfortable Travel</h4>
+                        <p>Enjoy a smooth ride with AC and comfortable seating.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- H2: Popular Bookings -->
+    <section class="section bg-light animate-on-scroll">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Popular <span class="highlight">Online Bookings</span></h2>
+                <div class="line"></div>
+                <p>Most trending routes booked by our customers recently.</p>
+            </div>
+
+            <div class="routes-cloud">
+                <a href="rohtak-to-delhi.html" class="route-pill-large animate-on-scroll animate-zoom"><i
+                        class="fa-solid fa-location-dot"></i> Rohtak → Delhi</a>
+                <a href="rohtak-to-gurgaon.html" class="route-pill-large animate-on-scroll animate-zoom"><i
+                        class="fa-solid fa-location-dot"></i> Rohtak → Gurgaon</a>
+                <a href="rohtak-to-chandigarh.html" class="route-pill-large animate-on-scroll animate-zoom"><i
+                        class="fa-solid fa-location-dot"></i> Rohtak → Chandigarh</a>
+                <a href="rohtak-to-hisar.html" class="route-pill-large animate-on-scroll animate-zoom"><i
+                        class="fa-solid fa-location-dot"></i> Rohtak → Hisar</a>
+                <a href="rohtak-to-jaipur.html" class="route-pill-large animate-on-scroll animate-zoom"><i
+                        class="fa-solid fa-location-dot"></i> Rohtak → Jaipur</a>
+                <a href="airport-taxi.html" class="route-pill-large animate-on-scroll animate-zoom"><i
+                        class="fa-solid fa-plane"></i> Delhi Airport Pickup/Drop</a>
+                <a href="airport-taxi.html" class="route-pill-large animate-on-scroll animate-zoom"><i
+                        class="fa-solid fa-plane"></i> Chandigarh Airport Taxi</a>
+                <a href="rohtak-to-noida.html" class="route-pill-large animate-on-scroll animate-zoom"><i
+                        class="fa-solid fa-location-dot"></i> Rohtak → Noida</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- H2: Customer Support -->
+    <section class="section" style="background: var(--primary-color); color: white; text-align: center;">
+        <div class="container animate-on-scroll animate-zoom">
+            <div
+                style="background: rgba(255,255,255,0.05); padding: 50px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <i class="fa-solid fa-headset"
+                    style="font-size: 4rem; color: var(--accent-color); margin-bottom: 20px;"></i>
+                <h2>Customer Support</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px; color: rgba(255,255,255,0.8);">Koi bhi emergency,
+                    instant change ya update ke liye immediately call karein.</p>
+                <a href="tel:08307930740" class="btn btn-primary pulse"
+                    style="font-size: 1.5rem; padding: 15px 50px;"><i class="fa-solid fa-phone"></i> 083079 30740</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <!-- SECTION 1: COMPANY INTRO -->
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <div style="margin-bottom: 20px;">
+                    <img src="images/logo.png" alt="Rohtak Cab Service Logo" style="height: 60px; margin-bottom: 15px;">
+                </div>
+                <p>Your trusted 24×7 taxi service in Rohtak for local rides, airport transfers, one-way cabs, outstation
+                    trips and group travel. Clean cars, trained drivers and affordable fares.</p>
+                <p style="margin-top: 10px; font-size: 0.9rem;">Serving Rohtak, Delhi NCR, Haryana, Punjab, Rajasthan &
+                    Himachal.</p>
+            </div>
+
+            <!-- SECTION 2: IMPORTANT LINKS -->
+            <div class="footer-col">
+                <h3>Important Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                    <li><a href="about-us.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+                    <li><a href="online-cab-booking.html"><i class="fa-solid fa-angle-right"></i> Booking</a></li>
+                    <li><a href="all-services.html"><i class="fa-solid fa-angle-right"></i> All Services</a></li>
+                    <li><a href="sedan-taxi.html"><i class="fa-solid fa-angle-right"></i> Fleet</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 3: OUR SERVICES -->
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="taxi-service-in-rohtak.html"><i class="fa-solid fa-taxi"></i> Taxi Service in
+                            Rohtak</a></li>
+                    <li><a href="local-taxi-service.html"><i class="fa-solid fa-taxi"></i> Local Taxi Service</a></li>
+                    <li><a href="outstation-taxi-service.html"><i class="fa-solid fa-taxi"></i> Outstation Taxi</a></li>
+                    <li><a href="one-way-taxi-service.html"><i class="fa-solid fa-taxi"></i> One-Way Taxi</a></li>
+                    <li><a href="airport-taxi.html"><i class="fa-solid fa-plane"></i> Airport Taxi</a></li>
+                    <li><a href="sedan-taxi.html"><i class="fa-solid fa-car"></i> Sedan / SUV Taxi</a></li>
+                    <li><a href="innova-crysta-taxi.html"><i class="fa-solid fa-crown"></i> Innova Crysta Taxi</a></li>
+                    <li><a href="tempo-traveller.html"><i class="fa-solid fa-bus"></i> Tempo Traveller / Minibus</a>
+                    </li>
+                    <li><a href="all-services.html"><i class="fa-solid fa-list"></i> All Services</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 4: TOP ROUTES -->
+            <div class="footer-col">
+                <h3>Top Routes</h3>
+                <ul class="footer-links">
+                    <li><a href="rohtak-to-delhi.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Delhi</a>
+                    </li>
+                    <li><a href="rohtak-to-gurgaon.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Gurgaon</a>
+                    </li>
+                    <li><a href="rohtak-to-chandigarh.html"><i class="fa-solid fa-location-arrow"></i> Rohtak →
+                            Chandigarh</a></li>
+                    <li><a href="rohtak-to-jaipur.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Jaipur</a>
+                    </li>
+                    <li><a href="rohtak-to-noida.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Noida</a>
+                    </li>
+                    <li><a href="rohtak-to-faridabad.html"><i class="fa-solid fa-location-arrow"></i> Rohtak →
+                            Faridabad</a></li>
+                    <li><a href="rohtak-to-panipat.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Panipat</a>
+                    </li>
+                    <li><a href="rohtak-to-sonipat.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Sonipat</a>
+                    </li>
+                    <li><a href="rohtak-to-hisar.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Hisar</a>
+                    </li>
+                    <li><a href="rohtak-to-agra.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Agra</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5, 6: CONTACT & CTA -->
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong><br>Shop No. 1720, Housing Board,
+                    Sector-1, Rohtak, Haryana 124001</p>
+                <div style="margin: 15px 0;">
+                    <p><i class="fa-solid fa-phone"></i> 083079 30740</p>
+                    <p><i class="fa-brands fa-whatsapp"></i> 083079 30740</p>
+                    <p><i class="fa-solid fa-clock"></i> 24×7 Available</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@rohtakcabservice.com</p>
+                </div>
+
+                <!-- Calls to Action -->
+                <div class="footer-cta" style="margin-top: 20px;">
+                    <a href="tel:08307930740" class="footer-btn btn-blue"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+                    <a href="https://wa.me/918307930740" class="footer-btn btn-green"><i
+                            class="fa-brands fa-whatsapp"></i> WHATSAPP</a>
+                    <a href="index.html#booking" class="footer-btn btn-yellow"><i class="fa-solid fa-car"></i> BOOK A
+                        RIDE</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rohtak Cab Service — All Rights Reserved. | Designed & Powered By <a
+                    href="https://ethicscomputer.in" target="_blank">EthicsComputer</a></p>
+        </div>
+    </footer>
+    <a href="https://wa.me/918307930740" class="floating-whatsapp" target="_blank"><i
+            class="fa-brands fa-whatsapp"></i></a>
+    <script src="script.js"></script>
+    <script>
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var pickup = document.getElementById("pickup").value;
+            var drop = document.getElementById("drop").value;
+            var date = document.getElementById("date").value;
+            var time = document.getElementById("time").value;
+            var car = document.getElementById("car").value;
+            var passengers = document.getElementById("passengers").value;
+            var tripType = document.getElementById("tripType").value;
+            var note = document.getElementById("note").value;
+
+            var msg = `*🚖 New Online Booking Request* %0A%0A` +
+                `👤 *Name:* ${name} %0A` +
+                `📱 *Mobile:* ${phone} %0A` +
+                `📍 *Pickup:* ${pickup} %0A` +
+                `📍 *Drop:* ${drop} %0A` +
+                `📅 *Date:* ${date} %0A` +
+                `🕒 *Time:* ${time} %0A` +
+                `🚘 *Car Type:* ${car} %0A` +
+                `🛣 *Trip Type:* ${tripType} %0A` +
+                `👥 *Passenger:* ${passengers} %0A`;
+
+            if (note) {
+                msg += `📝 *Note:* ${note}%0A`;
+            }
+
+            var url = "https://wa.me/918307930740?text=" + msg;
+            window.open(url, '_blank').focus();
+        }
+    </script>
+</body>
+
+</html>

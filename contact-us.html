@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Rohtak Cab Service - 24x7 Taxi Booking Support</title>
+    <meta name="description"
+        content="Contact Rohtak Cab Service for 24x7 taxi booking. Call 083079 30740 for local, outstation, and airport cabs. Office: Sector-1, Rohtak.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Unique Page Styles: Contact Us --- */
+
+        .hero-contact {
+            height: 50vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero_bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: -60px;
+            /* Overlap Hero */
+            position: relative;
+            z-index: 2;
+            padding-bottom: 50px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: 0.4s var(--ease-out-quart);
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(252, 163, 17, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--accent-color);
+            transition: 0.4s;
+        }
+
+        .contact-card:hover .contact-icon-circle {
+            background: var(--accent-color);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* Business Hours Table */
+        .hours-box {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            border: 1px solid #eee;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        /* Map Section */
+        .map-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 450px;
+            width: 100%;
+        }
+
+        /* Emergency Box */
+        .emergency-box {
+            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: 0 15px 30px rgba(211, 47, 47, 0.3);
+        }
+
+        /* Process Horizontal (Unique) */
+        .process-steps-contact {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .process-steps-contact::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #e0e0e0;
+            z-index: 0;
+        }
+
+        .p-step {
+            position: relative;
+            z-index: 1;
+            background: white;
+            text-align: center;
+            width: 18%;
+        }
+
+        .p-num {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            border: 5px solid white;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                margin-top: 0;
+                padding-top: 50px;
+            }
+
+            .process-steps-contact {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .process-steps-contact::before {
+                display: none;
+            }
+
+            .p-step {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                text-align: left;
+            }
+
+            .p-num {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Rohtak Cab Service Logo"></a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+
+                    <li class="dropdown">
+                        <a href="all-services.html" class="dropbtn">Services <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="taxi-service-in-rohtak.html">Taxi Service in Rohtak</a></li>
+                            <li><a href="local-taxi-service.html">Local Taxi</a></li>
+                            <li><a href="outstation-taxi-service.html">Outstation Taxi</a></li>
+                            <li><a href="airport-taxi.html">Airport Taxi</a></li>
+                            <li><a href="one-way-taxi-service.html">One-Way Taxi</a></li>
+                            <li><a href="all-services.html">View All Services</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="all-routes.html" class="dropbtn">Routes <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="rohtak-to-delhi.html">Rohtak → Delhi</a></li>
+                            <li><a href="rohtak-to-gurgaon.html">Rohtak → Gurgaon</a></li>
+                            <li><a href="rohtak-to-chandigarh.html">Rohtak → Chandigarh</a></li>
+                            <li><a href="rohtak-to-noida.html">Rohtak → Noida</a></li>
+                            <li><a href="rohtak-to-jaipur.html">Rohtak → Jaipur</a></li>
+                            <li><a href="all-routes.html">View All Routes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="index.html#fleet" class="dropbtn">Fleet <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="sedan-taxi.html">Sedan</a></li>
+                            <li><a href="suv-taxi.html">SUV</a></li>
+                            <li><a href="innova-crysta-taxi.html">Innova Crysta</a></li>
+                            <li><a href="tempo-traveller.html">Tempo Traveller</a></li>
+                            <li><a href="minibus-taxi.html">Minibus</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="online-cab-booking.html">Booking</a></li>
+                    <li><a href="contact-us.html" class="highlight">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:08307930740" class="btn btn-outline"><i class="fa-solid fa-phone"></i> 083079 30740</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <div class="close-menu">&times;</div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="all-services.html">Services</a></li>
+            <li><a href="all-routes.html">Routes</a></li>
+            <li><a href="sedan-taxi.html">Fleet</a></li>
+            <li><a href="online-cab-booking.html">Booking</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- H1 Hero Section -->
+    <section class="hero-contact">
+        <div class="container animate-on-scroll animate-zoom">
+            <h1>Contact Rohtak Cab Service</h1>
+            <p
+                style="font-size: 1.3rem; margin-top: 15px; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.9;">
+                24×7 Taxi Booking • Instant Confirmation • Corporate Support
+            </p>
+            <p style="font-size: 1rem; margin-top: 10px; opacity: 0.8; max-width: 600px; margin: 10px auto;">
+                Agar aap Rohtak me taxi book karna chahte hain — local ride, outstation trip, airport drop, one-way cab,
+                ya group travel — hum 24×7 aapki service me ready hain.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Cards (Floating) -->
+    <section class="section bg-light" style="padding-top: 0;">
+        <div class="container contact-grid">
+
+            <!-- Address -->
+            <div class="contact-card animate-on-scroll animate-fade-right delay-100">
+                <div class="contact-icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                <h3>Office Address</h3>
+                <p style="color: #666; margin-top: 10px;">Shop No. 1720, Housing Board,<br>Sector-1, Rohtak, Haryana
+                    124001</p>
+                <a href="#map" class="btn-text"
+                    style="color: var(--accent-color); margin-top: 15px; display: inline-block;">View on Map <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-card animate-on-scroll animate-zoom delay-200">
+                <div class="contact-icon-circle"><i class="fa-solid fa-phone"></i></div>
+                <h3>Phone (24×7)</h3>
+                <p style="color: #666; margin-top: 10px;">For Booking & Inquiry</p>
+                <h4 style="font-size: 1.5rem; color: var(--primary-color); margin: 10px 0;">083079 30740</h4>
+                <a href="tel:08307930740" class="btn btn-primary pulse-gold">Call Now</a>
+            </div>
+
+            <!-- Email/WhatsApp -->
+            <div class="contact-card animate-on-scroll animate-fade-left delay-300">
+                <div class="contact-icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
+                <h3>WhatsApp & Email</h3>
+                <p style="color: #666; margin-top: 10px;">Instant Support</p>
+                <h4 style="font-size: 1.5rem; color: var(--primary-color); margin: 10px 0;">083079 30740</h4>
+                <a href="mailto:support@rohtakcabservice.com"
+                    style="color: #666; display: block; margin-bottom: 10px;">support@rohtakcabservice.com</a>
+                <a href="https://wa.me/918307930740" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat
+                    Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Content Split: Business Hours & Corporate -->
+    <section class="section">
+        <div class="container">
+            <div class="row" style="display: flex; gap: 50px; flex-wrap: wrap;">
+
+                <!-- Left: Quick Booking & Hours -->
+                <div class="col animate-on-scroll animate-fade-right" style="flex: 1; min-width: 300px;">
+                    <div class="section-header" style="text-align: left;">
+                        <h2>Quick <span class="highlight">Booking</span></h2>
+                        <div class="line" style="margin-left: 0;"></div>
+                        <p>Taxi book karne ka sabse fast method:</p>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <div class="feature-box-adv" style="margin-bottom: 15px; padding: 20px;">
+                            <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <h4>WhatsApp Booking</h4>
+                                <p>Send Pickup, Drop, Date & Car Type. Get rate instantly.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box-adv" style="margin-bottom: 15px; padding: 20px;">
+                            <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4>Call Booking</h4>
+                                <p>Just call and confirm your cab in seconds.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Business Hours</h3>
+                    <div class="hours-box">
+                        <div class="hours-row">
+                            <span>Monday – Sunday</span>
+                            <span style="font-weight: 700; color: var(--accent-color);">24×7 Open</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Public Holidays</span>
+                            <span style="font-weight: 700; color: var(--accent-color);">24×7 Available</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Night Service</span>
+                            <span style="font-weight: 700; color: var(--accent-color);">Available</span>
+                        </div>
+                        <p style="margin-top: 15px; font-size: 0.9rem; text-align: center; color: #777;">Hum 365 days,
+                            24×7 taxi provide karte hain.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Corporate & Emergency -->
+                <div class="col animate-on-scroll animate-fade-left" style="flex: 1; min-width: 300px;">
+                    <div class="section-header" style="text-align: left;">
+                        <h2>For <span class="highlight">Corporate</span> Travel</h2>
+                        <div class="line" style="margin-left: 0;"></div>
+                        <p>Companies, offices, institutions & events ke liye.</p>
+                    </div>
+
+                    <ul style="list-style: none; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px; font-size: 1.1rem;"><i class="fa-solid fa-briefcase highlight"
+                                style="margin-right: 10px;"></i> Monthly cab contracts</li>
+                        <li style="margin-bottom: 10px; font-size: 1.1rem;"><i class="fa-solid fa-user-group highlight"
+                                style="margin-right: 10px;"></i> Staff pick & drop</li>
+                        <li style="margin-bottom: 10px; font-size: 1.1rem;"><i
+                                class="fa-solid fa-file-invoice-dollar highlight" style="margin-right: 10px;"></i>
+                            Corporate billing (GST)</li>
+                        <li style="margin-bottom: 10px; font-size: 1.1rem;"><i class="fa-solid fa-plane highlight"
+                                style="margin-right: 10px;"></i> Airport transfers</li>
+                        <li style="margin-bottom: 10px; font-size: 1.1rem;"><i class="fa-solid fa-car highlight"
+                                style="margin-right: 10px;"></i> AC sedan & SUV fleet</li>
+                    </ul>
+
+                    <div class="emergency-box">
+                        <div>
+                            <h3 style="margin-bottom: 5px;">Emergency Contact</h3>
+                            <p class="mb-0" style="opacity: 0.9;">Late-night travel, emergency hospital rides?</p>
+                        </div>
+                        <a href="tel:08307930740"
+                            style="background: white; color: #d32f2f; padding: 10px 25px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.2rem;"><i
+                                class="fa-solid fa-phone"></i> Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="section bg-light">
+        <div class="container animate-on-scroll animate-zoom">
+            <div class="section-header">
+                <h2>Our <span class="highlight">Location</span></h2>
+                <div class="line"></div>
+                <p>Find us on Google Maps</p>
+            </div>
+            <div class="map-wrapper">
+                <iframe
+                    src="https://maps.google.com/maps?q=Shop+No.+1720,+Housing+board,+Sector-1,+Rohtak,+Haryana+124001&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works (Steps) -->
+    <section class="section">
+        <div class="container animate-on-scroll">
+            <div class="section-header">
+                <h2>What Happens <span class="highlight">After Contact?</span></h2>
+                <div class="line"></div>
+                <p>Simple, fast, clear process.</p>
+            </div>
+
+            <div class="process-steps-contact">
+                <div class="p-step">
+                    <div class="p-num">1</div>
+                    <h4>Details</h4>
+                    <p>Aap pickup/drop details dete hain</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">2</div>
+                    <h4>Fare</h4>
+                    <p>Hum fare confirm karte hain</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">3</div>
+                    <h4>Vehicle</h4>
+                    <p>Car assign ho jati hai</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">4</div>
+                    <h4>Driver</h4>
+                    <p>Driver details WhatsApp par milti hain</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">5</div>
+                    <h4>Pickup</h4>
+                    <p>Taxi time par pickup karti hai</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="faq-accordion animate-on-scroll animate-fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">Q. Kya aap 24×7 taxi service dete ho?<i
+                            class="fa-solid fa-plus"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes, Rohtak me full-time available. Hum 24 ghante taxi service provide karte hain.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Q. Kya airport taxi milti hai?<i class="fa-solid fa-plus"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes — Delhi IGI Airport & Chandigarh Airport drops and pickups are available 24x7.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Q. Kya one-way taxi available hai?<i
+                            class="fa-solid fa-plus"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes — Delhi, Gurgaon, Chandigarh, Jaipur, Hisar, Noida etc. ke liye One-Way taxi milti hai.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Q. Kaunsi cars available hain?<i class="fa-solid fa-plus"></i></button>
+                    <div class="faq-answer">
+                        <p>Humare paas Sedan (Dzire/Etios), SUV (Ertiga), Innova Crysta, Tempo Traveller aur Minibus
+                            available hain.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Q. Kya online booking possible hai?<i
+                            class="fa-solid fa-plus"></i></button>
+                    <div class="faq-answer">
+                        <p>Yes — Aap WhatsApp, Call ya Website Form ke through easily online taxi book kar sakte hain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section bg-dark text-white text-center">
+        <div class="container animate-on-scroll animate-zoom">
+            <h2 style="color: white; margin-bottom: 20px;">Ready to Book Your Ride?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.8;">Rohtak Cab Service – Safe, Affordable &
+                On-Time Taxi.</p>
+            <div class="hero-btns" style="justify-content: center;">
+                <a href="tel:08307930740" class="btn btn-primary pulse"><i class="fa-solid fa-phone"></i> Call 083079
+                    30740</a>
+                <a href="https://wa.me/918307930740" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp Us</a>
+                <a href="online-cab-booking.html" class="btn btn-outline"
+                    style="color: white; border-color: white;">Book Online</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <!-- SECTION 1: COMPANY INTRO -->
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <div style="margin-bottom: 20px;">
+                    <img src="images/logo.png" alt="Rohtak Cab Service Logo" style="height: 60px; margin-bottom: 15px;">
+                </div>
+                <p>Your trusted 24×7 taxi service in Rohtak for local rides, airport transfers, one-way cabs, outstation
+                    trips and group travel. Clean cars, trained drivers and affordable fares.</p>
+                <p style="margin-top: 10px; font-size: 0.9rem;">Serving Rohtak, Delhi NCR, Haryana, Punjab, Rajasthan &
+                    Himachal.</p>
+            </div>
+
+            <!-- SECTION 2: IMPORTANT LINKS -->
+            <div class="footer-col">
+                <h3>Important Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                    <li><a href="about-us.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+                    <li><a href="online-cab-booking.html"><i class="fa-solid fa-angle-right"></i> Booking</a></li>
+                    <li><a href="all-services.html"><i class="fa-solid fa-angle-right"></i> All Services</a></li>
+                    <li><a href="sedan-taxi.html"><i class="fa-solid fa-angle-right"></i> Fleet</a></li>
+                    <li><a href="contact-us.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i> Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 3: OUR SERVICES -->
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="taxi-service-in-rohtak.html"><i class="fa-solid fa-taxi"></i> Taxi Service in
+                            Rohtak</a></li>
+                    <li><a href="local-taxi-service.html"><i class="fa-solid fa-taxi"></i> Local Taxi Service</a></li>
+                    <li><a href="outstation-taxi-service.html"><i class="fa-solid fa-taxi"></i> Outstation Taxi</a></li>
+                    <li><a href="one-way-taxi-service.html"><i class="fa-solid fa-taxi"></i> One-Way Taxi</a></li>
+                    <li><a href="airport-taxi.html"><i class="fa-solid fa-plane"></i> Airport Taxi</a></li>
+                    <li><a href="sedan-taxi.html"><i class="fa-solid fa-car"></i> Sedan / SUV Taxi</a></li>
+                    <li><a href="innova-crysta-taxi.html"><i class="fa-solid fa-crown"></i> Innova Crysta Taxi</a></li>
+                    <li><a href="tempo-traveller.html"><i class="fa-solid fa-bus"></i> Tempo Traveller / Minibus</a>
+                    </li>
+                    <li><a href="all-services.html"><i class="fa-solid fa-list"></i> All Services</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 4: TOP ROUTES -->
+            <div class="footer-col">
+                <h3>Top Routes</h3>
+                <ul class="footer-links">
+                    <li><a href="rohtak-to-delhi.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Delhi</a>
+                    </li>
+                    <li><a href="rohtak-to-gurgaon.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Gurgaon</a>
+                    </li>
+                    <li><a href="rohtak-to-chandigarh.html"><i class="fa-solid fa-location-arrow"></i> Rohtak →
+                            Chandigarh</a></li>
+                    <li><a href="rohtak-to-jaipur.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Jaipur</a>
+                    </li>
+                    <li><a href="rohtak-to-noida.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Noida</a>
+                    </li>
+                    <li><a href="rohtak-to-faridabad.html"><i class="fa-solid fa-location-arrow"></i> Rohtak →
+                            Faridabad</a></li>
+                    <li><a href="rohtak-to-panipat.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Panipat</a>
+                    </li>
+                    <li><a href="rohtak-to-sonipat.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Sonipat</a>
+                    </li>
+                    <li><a href="rohtak-to-hisar.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Hisar</a>
+                    </li>
+                    <li><a href="rohtak-to-agra.html"><i class="fa-solid fa-location-arrow"></i> Rohtak → Agra</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION 5, 6: CONTACT & CTA -->
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong><br>Shop No. 1720, Housing Board,
+                    Sector-1, Rohtak, Haryana 124001</p>
+                <div style="margin: 15px 0;">
+                    <p><i class="fa-solid fa-phone"></i> 083079 30740</p>
+                    <p><i class="fa-brands fa-whatsapp"></i> 083079 30740</p>
+                    <p><i class="fa-solid fa-clock"></i> 24×7 Available</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@rohtakcabservice.com</p>
+                </div>
+
+                <!-- Calls to Action -->
+                <div class="footer-cta" style="margin-top: 20px;">
+                    <a href="tel:08307930740" class="footer-btn btn-blue"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+                    <a href="https://wa.me/918307930740" class="footer-btn btn-green"><i
+                            class="fa-brands fa-whatsapp"></i> WHATSAPP</a>
+                    <a href="online-cab-booking.html" class="footer-btn btn-yellow"><i class="fa-solid fa-car"></i> BOOK
+                        A RIDE</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rohtak Cab Service — All Rights Reserved. | Designed & Powered By <a
+                    href="https://ethicscomputer.in" target="_blank">EthicsComputer</a></p>
+        </div>
+    </footer>
+    <a href="https://wa.me/918307930740" class="floating-whatsapp" target="_blank"><i
+            class="fa-brands fa-whatsapp"></i></a>
+    <script src="script.js"></script>
+</body>
+
+</html>
