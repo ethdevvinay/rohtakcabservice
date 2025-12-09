@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://rohtakcabservice.com/sitemap.xml
+Sitemap: https://rohtakcabservice.netlify.app/sitemap.xml
 
 # Disallow admin or private directories (if any in future)
 # Disallow: /admin/
